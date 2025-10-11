@@ -1,0 +1,7 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Starlight/App_Data
+/Starlight/.vs/Starlight
+/.vs
