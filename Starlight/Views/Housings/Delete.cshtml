@@ -1,0 +1,120 @@
+﻿@model Starlight.Models.Housing
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Housing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City_Village)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City_Village)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AutonumusCommunity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutonumusCommunity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pool)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pool)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SportsFacility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SportsFacility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChildrenFacility)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChildrenFacility)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo_Video)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo_Video)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

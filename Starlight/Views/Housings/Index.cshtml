@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Starlight.Models.Housing>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City_Village)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Province)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AutonumusCommunity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Parking)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pool)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SportsFacility)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChildrenFacility)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo_Video)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City_Village)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Province)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AutonumusCommunity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Country)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Parking)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pool)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SportsFacility)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ChildrenFacility)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Photo_Video)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.HousingId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.HousingId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.HousingId })
+        </td>
+    </tr>
+}
+
+</table>

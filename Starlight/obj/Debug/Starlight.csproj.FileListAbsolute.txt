@@ -445,3 +445,4 @@ C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.cs
 C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.csproj.Up2Date
 C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.dll
 C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.pdb
+C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewHousing.resources

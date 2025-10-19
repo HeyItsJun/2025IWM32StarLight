@@ -172,6 +172,7 @@
     <Compile Include="Controllers\AmusementParkController.cs" />
     <Compile Include="Controllers\ExperiencesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HousingsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ShowsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -193,10 +194,15 @@
     <Compile Include="Migrations\202510191550118_NewShow.Designer.cs">
       <DependentUpon>202510191550118_NewShow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510191748566_NewHousing.cs" />
+    <Compile Include="Migrations\202510191748566_NewHousing.Designer.cs">
+      <DependentUpon>202510191748566_NewHousing.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AmusementPark.cs" />
     <Compile Include="Models\Experience.cs" />
+    <Compile Include="Models\Housing.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Show.cs" />
@@ -294,6 +300,11 @@
     <Content Include="Views\Shows\Details.cshtml" />
     <Content Include="Views\Shows\Edit.cshtml" />
     <Content Include="Views\Shows\Index.cshtml" />
+    <Content Include="Views\Housings\Create.cshtml" />
+    <Content Include="Views\Housings\Delete.cshtml" />
+    <Content Include="Views\Housings\Details.cshtml" />
+    <Content Include="Views\Housings\Edit.cshtml" />
+    <Content Include="Views\Housings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -337,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510191550118_NewShow.resx">
       <DependentUpon>202510191550118_NewShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510191748566_NewHousing.resx">
+      <DependentUpon>202510191748566_NewHousing.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
