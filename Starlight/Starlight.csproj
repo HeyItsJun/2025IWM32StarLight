@@ -173,6 +173,7 @@
     <Compile Include="Controllers\ExperiencesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShowsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -188,12 +189,17 @@
     <Compile Include="Migrations\202510191524192_NewAmusementPark.Designer.cs">
       <DependentUpon>202510191524192_NewAmusementPark.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510191550118_NewShow.cs" />
+    <Compile Include="Migrations\202510191550118_NewShow.Designer.cs">
+      <DependentUpon>202510191550118_NewShow.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AmusementPark.cs" />
     <Compile Include="Models\Experience.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Show.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -283,6 +289,11 @@
     <Content Include="Views\AmusementPark\Details.cshtml" />
     <Content Include="Views\AmusementPark\Edit.cshtml" />
     <Content Include="Views\AmusementPark\Index.cshtml" />
+    <Content Include="Views\Shows\Create.cshtml" />
+    <Content Include="Views\Shows\Delete.cshtml" />
+    <Content Include="Views\Shows\Details.cshtml" />
+    <Content Include="Views\Shows\Edit.cshtml" />
+    <Content Include="Views\Shows\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -323,6 +334,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510191524192_NewAmusementPark.resx">
       <DependentUpon>202510191524192_NewAmusementPark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510191550118_NewShow.resx">
+      <DependentUpon>202510191550118_NewShow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
