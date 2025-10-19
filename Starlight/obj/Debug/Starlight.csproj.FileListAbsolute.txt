@@ -213,9 +213,9 @@ C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\bin\Microsoft.Owin.S
 C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.csproj.AssemblyReference.cache
 C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.InitialCreate.resources
+C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewExperience.resources
 C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.csproj.GenerateResource.cache
 C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.csproj.CoreCompileInputs.cache
 C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.csproj.Up2Date
 C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.dll
 C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.pdb
-C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewExperience.resources
