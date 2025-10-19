@@ -14,14 +14,14 @@ namespace Starlight.Models
         public String Location { get; set; }
         public String Description { get; set; }
         public String LocationType { get; set; }
-        // public Boolean CityTown { get; set; }
+        public String CityTown { get; set; }
         public String Province { get; set; }
         public String Community { get; set; }
         public String Country { get; set; }
-        public String Sponsort { get; set; } // agencia patrocinadora
+        public String Sponsor { get; set; }
         public double Price { get; set; }
-        // días de la semana que se ofrece
+        public List <DayOfWeek> DayOfWeeks { get; set; }
         public int Duration { get; set; }
-        public String[] Media { get; set; } // vídeos/fotos
+        public List<String> Media { get; set; } 
     }
 }

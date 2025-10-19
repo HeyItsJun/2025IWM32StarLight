@@ -29,5 +29,7 @@ namespace Starlight.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Starlight.Models.Experience> Experiences { get; set; }
     }
 }
