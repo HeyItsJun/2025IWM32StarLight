@@ -31,5 +31,7 @@ namespace Starlight.Models
         }
 
         public System.Data.Entity.DbSet<Starlight.Models.Experience> Experiences { get; set; }
+
+        public System.Data.Entity.DbSet<Starlight.Models.AmusementPark> AmusementParks { get; set; }
     }
 }

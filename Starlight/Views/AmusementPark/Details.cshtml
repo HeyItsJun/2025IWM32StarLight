@@ -1,0 +1,90 @@
+﻿@model Starlight.Models.AmusementPark
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AmusementPark</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeAmusementPark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeAmusementPark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City_Village)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City_Village)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Province)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Province)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AutonumusCommunity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AutonumusCommunity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaxPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaxPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Photo_Video)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Photo_Video)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AmusementParkId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

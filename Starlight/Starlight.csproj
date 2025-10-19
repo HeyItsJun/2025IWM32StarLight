@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AmusementParkController.cs" />
     <Compile Include="Controllers\ExperiencesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -183,8 +184,13 @@
     <Compile Include="Migrations\202510191106373_NewExperience.Designer.cs">
       <DependentUpon>202510191106373_NewExperience.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510191524192_NewAmusementPark.cs" />
+    <Compile Include="Migrations\202510191524192_NewAmusementPark.Designer.cs">
+      <DependentUpon>202510191524192_NewAmusementPark.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AmusementPark.cs" />
     <Compile Include="Models\Experience.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -267,6 +273,16 @@
     <Content Include="Views\Experiences\Details.cshtml" />
     <Content Include="Views\Experiences\Edit.cshtml" />
     <Content Include="Views\Experiences\Index.cshtml" />
+    <Content Include="Views\AmusementParks\Create.cshtml" />
+    <Content Include="Views\AmusementParks\Delete.cshtml" />
+    <Content Include="Views\AmusementParks\Details.cshtml" />
+    <Content Include="Views\AmusementParks\Edit.cshtml" />
+    <Content Include="Views\AmusementParks\Index.cshtml" />
+    <Content Include="Views\AmusementPark\Create.cshtml" />
+    <Content Include="Views\AmusementPark\Delete.cshtml" />
+    <Content Include="Views\AmusementPark\Details.cshtml" />
+    <Content Include="Views\AmusementPark\Edit.cshtml" />
+    <Content Include="Views\AmusementPark\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -304,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510191106373_NewExperience.resx">
       <DependentUpon>202510191106373_NewExperience.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510191524192_NewAmusementPark.resx">
+      <DependentUpon>202510191524192_NewAmusementPark.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
