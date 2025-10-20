@@ -18,8 +18,8 @@ namespace Starlight.Models
         public String Country { get; set; }
         public String FoodType { get; set; }
         public String Style { get; set; }
-        public int MinPrice { get; set; }
-        public int MaxPrice { get; set; }
+        public double MinPrice { get; set; }
+        public double MaxPrice { get; set; }
         public double AverageScore { get; set; }
         public List<String> Media { get; set; }
     }
