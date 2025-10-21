@@ -1,14 +1,13 @@
-﻿@model Starlight.Models.AmusementPark
+﻿@model Starlight.Models.ThemePark
 
 @{
     ViewBag.Title = "Details";
-    Layout = "AmusementParkController";
 }
 
 <h2>Details</h2>
 
 <div>
-    <h4>AmusementPark</h4>
+    <h4>ThemePark</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -20,11 +19,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.TypeAmusementPark)
+            @Html.DisplayNameFor(model => model.TypeThemePark)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TypeAmusementPark)
+            @Html.DisplayFor(model => model.TypeThemePark)
         </dd>
 
         <dt>
@@ -86,6 +85,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AmusementParkId }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ThemeParkId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

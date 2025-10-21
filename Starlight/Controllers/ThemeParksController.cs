@@ -10,107 +10,107 @@ using Starlight.Models;
 
 namespace Starlight.Controllers
 {
-    public class AmusementParkController : Controller
+    public class ThemeParksController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: AmusementPark
+        // GET: ThemeParks
         public ActionResult Index()
         {
-            return View(db.AmusementParks.ToList());
+            return View(db.ThemeParks.ToList());
         }
 
-        // GET: AmusementPark/Details/5
+        // GET: ThemeParks/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AmusementPark amusementPark = db.AmusementParks.Find(id);
-            if (amusementPark == null)
+            ThemePark themePark = db.ThemeParks.Find(id);
+            if (themePark == null)
             {
                 return HttpNotFound();
             }
-            return View(amusementPark);
+            return View(themePark);
         }
 
-        // GET: AmusementPark/Create
+        // GET: ThemeParks/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: AmusementPark/Create
+        // POST: ThemeParks/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AmusementParkId,Name,TypeAmusementPark,City_Village,Province,AutonumusCommunity,Country,MinPrice,MaxPrice,Photo_Video")] AmusementPark amusementPark)
+        public ActionResult Create([Bind(Include = "ThemeParkId,Name,TypeThemePark,City_Village,Province,AutonumusCommunity,Country,MinPrice,MaxPrice,Photo_Video")] ThemePark themePark)
         {
             if (ModelState.IsValid)
             {
-                db.AmusementParks.Add(amusementPark);
+                db.ThemeParks.Add(themePark);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(amusementPark);
+            return View(themePark);
         }
 
-        // GET: AmusementPark/Edit/5
+        // GET: ThemeParks/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AmusementPark amusementPark = db.AmusementParks.Find(id);
-            if (amusementPark == null)
+            ThemePark themePark = db.ThemeParks.Find(id);
+            if (themePark == null)
             {
                 return HttpNotFound();
             }
-            return View(amusementPark);
+            return View(themePark);
         }
 
-        // POST: AmusementPark/Edit/5
+        // POST: ThemeParks/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AmusementParkId,Name,TypeAmusementPark,City_Village,Province,AutonumusCommunity,Country,MinPrice,MaxPrice,Photo_Video")] AmusementPark amusementPark)
+        public ActionResult Edit([Bind(Include = "ThemeParkId,Name,TypeThemePark,City_Village,Province,AutonumusCommunity,Country,MinPrice,MaxPrice,Photo_Video")] ThemePark themePark)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(amusementPark).State = EntityState.Modified;
+                db.Entry(themePark).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(amusementPark);
+            return View(themePark);
         }
 
-        // GET: AmusementPark/Delete/5
+        // GET: ThemeParks/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AmusementPark amusementPark = db.AmusementParks.Find(id);
-            if (amusementPark == null)
+            ThemePark themePark = db.ThemeParks.Find(id);
+            if (themePark == null)
             {
                 return HttpNotFound();
             }
-            return View(amusementPark);
+            return View(themePark);
         }
 
-        // POST: AmusementPark/Delete/5
+        // POST: ThemeParks/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AmusementPark amusementPark = db.AmusementParks.Find(id);
-            db.AmusementParks.Remove(amusementPark);
+            ThemePark themePark = db.ThemeParks.Find(id);
+            db.ThemeParks.Remove(themePark);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

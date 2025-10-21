@@ -7,13 +7,13 @@ namespace Starlight.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.5.1")]
-    public sealed partial class NewAmusementPark : IMigrationMetadata
+    public sealed partial class NewThemePark : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(NewAmusementPark));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(NewThemePark));
         
         string IMigrationMetadata.Id
         {
-            get { return "202510191524192_NewAmusementPark"; }
+            get { return "202510210941088_NewThemePark"; }
         }
         
         string IMigrationMetadata.Source

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Starlight.Models.AmusementPark>
+﻿@model IEnumerable<Starlight.Models.ThemePark>
 
 @{
     ViewBag.Title = "Index";
@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TypeAmusementPark)
+            @Html.DisplayNameFor(model => model.TypeThemePark)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.City_Village)
@@ -47,7 +47,7 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TypeAmusementPark)
+            @Html.DisplayFor(modelItem => item.TypeThemePark)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.City_Village)
@@ -71,9 +71,9 @@
             @Html.DisplayFor(modelItem => item.Photo_Video)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AmusementParkId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AmusementParkId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AmusementParkId })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ThemeParkId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ThemeParkId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ThemeParkId })
         </td>
     </tr>
 }
