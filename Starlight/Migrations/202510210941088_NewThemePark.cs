@@ -24,7 +24,7 @@
                     })
                 .PrimaryKey(t => t.ThemeParkId);
             
-            DropTable("dbo.AmusementParks");
+            DropTable("dbo.ThemeParks");
         }
         
         public override void Down()

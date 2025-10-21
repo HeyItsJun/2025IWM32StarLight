@@ -327,7 +327,6 @@ C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\bin\Microsoft.CodeDom.
 C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.csproj.AssemblyReference.cache
 C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.InitialCreate.resources
 C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewExperience.resources
-C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewAmusementPark.resources
 C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewShow.resources
 C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.csproj.GenerateResource.cache
 C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.csproj.CoreCompileInputs.cache
@@ -565,3 +564,5 @@ C:\Users\elena\Documents\College\IPS\ProjectStarlight\Starlight\obj\Debug\Starli
 C:\Users\elena\Documents\College\IPS\ProjectStarlight\Starlight\obj\Debug\Starlight.dll
 C:\Users\elena\Documents\College\IPS\ProjectStarlight\Starlight\obj\Debug\Starlight.pdb
 C:\Users\elena\Documents\College\IPS\ProjectStarlight\Starlight\obj\Debug\Starlight.Migrations.NewThemePark.resources
+C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewRestaurant.resources
+C:\Users\USUARIO\Desktop\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewThemePark.resources
