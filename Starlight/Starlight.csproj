@@ -199,9 +199,9 @@
     <Compile Include="Migrations\202510191748566_NewHousing.Designer.cs">
       <DependentUpon>202510191748566_NewHousing.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202510201703589_NewRestaurant.cs" />
-    <Compile Include="Migrations\202510201703589_NewRestaurant.Designer.cs">
-      <DependentUpon>202510201703589_NewRestaurant.cs</DependentUpon>
+    <Compile Include="Migrations\202510210918544_NewRestaurant.cs" />
+    <Compile Include="Migrations\202510210918544_NewRestaurant.Designer.cs">
+      <DependentUpon>202510210918544_NewRestaurant.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -311,11 +311,6 @@
     <Content Include="Views\Housings\Details.cshtml" />
     <Content Include="Views\Housings\Edit.cshtml" />
     <Content Include="Views\Housings\Index.cshtml" />
-    <Content Include="Views\Restaurant\Create.cshtml" />
-    <Content Include="Views\Restaurant\Delete.cshtml" />
-    <Content Include="Views\Restaurant\Details.cshtml" />
-    <Content Include="Views\Restaurant\Edit.cshtml" />
-    <Content Include="Views\Restaurant\Index.cshtml" />
     <Content Include="Views\Restaurants\Create.cshtml" />
     <Content Include="Views\Restaurants\Delete.cshtml" />
     <Content Include="Views\Restaurants\Details.cshtml" />
@@ -368,8 +363,8 @@
     <EmbeddedResource Include="Migrations\202510191748566_NewHousing.resx">
       <DependentUpon>202510191748566_NewHousing.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202510201703589_NewRestaurant.resx">
-      <DependentUpon>202510201703589_NewRestaurant.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202510210918544_NewRestaurant.resx">
+      <DependentUpon>202510210918544_NewRestaurant.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

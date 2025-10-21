@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using System.ComponentModel.DataAnnotations;
-
 
 namespace Starlight.Models
 {
     public class Restaurant
     {
         [Key]
-        public int RestaurantID { get; set;}
+        public int RestaurantID { get; set; }
         public String Name { get; set; }
         public String CityTown { get; set; }
         public String Province { get; set; }

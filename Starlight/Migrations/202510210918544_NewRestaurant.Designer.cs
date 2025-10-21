@@ -13,7 +13,7 @@ namespace Starlight.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202510201703589_NewRestaurant"; }
+            get { return "202510210918544_NewRestaurant"; }
         }
         
         string IMigrationMetadata.Source
