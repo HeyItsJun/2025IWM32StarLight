@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Starlight.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Starlight.Controllers
 {
@@ -18,7 +19,9 @@ namespace Starlight.Controllers
         // GET: Experiences
         public ActionResult Index()
         {
-            return View(db.Experiences.ToList());
+            string currentUserId = User.Identity.GetUserId();
+            var userExperience = db.Experiences.Where(p=> p.UserId == currentUserId).ToList();
+            return View(userExperience);
         }
 
         // GET: Experiences/Details/5
@@ -29,7 +32,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Experience experience = db.Experiences.Find(id);
-            if (experience == null)
+            string currentUserId = User.Identity?.GetUserId();
+            if ((experience.UserId != currentUserId)||(experience==null))
             {
                 return HttpNotFound();
             }
@@ -49,6 +53,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ExperienceID,ExperienceType,Location,Description,LocationType,CityTown,Province,Community,Country,Sponsor,Price,Duration")] Experience experience)
         {
+            string currentUserId = User.Identity.GetUserId();
+            experience.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.Experiences.Add(experience);
@@ -67,7 +73,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Experience experience = db.Experiences.Find(id);
-            if (experience == null)
+            string currentUserId = User.Identity.GetUserId();
+            if ((experience.UserId != currentUserId) || (experience == null))
             {
                 return HttpNotFound();
             }
@@ -81,6 +88,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ExperienceID,ExperienceType,Location,Description,LocationType,CityTown,Province,Community,Country,Sponsor,Price,Duration")] Experience experience)
         {
+            string currentUserId = User.Identity.GetUserId();
+            experience.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.Entry(experience).State = EntityState.Modified;
@@ -98,7 +107,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Experience experience = db.Experiences.Find(id);
-            if (experience == null)
+            string currentUserId = User.Identity.GetUserId();
+            if ((experience.UserId != currentUserId) || (experience == null))
             {
                 return HttpNotFound();
             }
