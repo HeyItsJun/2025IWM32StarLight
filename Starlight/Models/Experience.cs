@@ -23,5 +23,7 @@ namespace Starlight.Models
         public List <DayOfWeek> DayOfWeeks { get; set; }
         public int Duration { get; set; }
         public List<String> Media { get; set; } 
+        public String UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

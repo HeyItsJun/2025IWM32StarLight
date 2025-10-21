@@ -203,6 +203,10 @@
     <Compile Include="Migrations\202510210941088_NewThemePark.Designer.cs">
       <DependentUpon>202510210941088_NewThemePark.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510211458278_ExperiencesWithUser.cs" />
+    <Compile Include="Migrations\202510211458278_ExperiencesWithUser.Designer.cs">
+      <DependentUpon>202510211458278_ExperiencesWithUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Experience.cs" />
@@ -360,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510210941088_NewThemePark.resx">
       <DependentUpon>202510210941088_NewThemePark.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510211458278_ExperiencesWithUser.resx">
+      <DependentUpon>202510211458278_ExperiencesWithUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
