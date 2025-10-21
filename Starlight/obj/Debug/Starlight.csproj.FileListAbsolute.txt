@@ -570,3 +570,4 @@ C:\Users\alexe\Desktop\Clases\UNI\Proyectos\2025IWM32StarLight\Starlight\obj\Deb
 C:\Users\alexe\Desktop\Clases\UNI\Proyectos\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewRestaurant.resources
 C:\Users\alexe\Desktop\Clases\UNI\Proyectos\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewThemePark.resources
 C:\Users\alexe\Desktop\Clases\UNI\Proyectos\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.ExperiencesWithUser.resources
+C:\Users\alexe\Desktop\Clases\UNI\Proyectos\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewExcursion.resources

@@ -169,6 +169,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ExcursionsController.cs" />
     <Compile Include="Controllers\ExperiencesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HousingsController.cs" />
@@ -207,8 +208,13 @@
     <Compile Include="Migrations\202510211458278_ExperiencesWithUser.Designer.cs">
       <DependentUpon>202510211458278_ExperiencesWithUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510211710420_NewExcursion.cs" />
+    <Compile Include="Migrations\202510211710420_NewExcursion.Designer.cs">
+      <DependentUpon>202510211710420_NewExcursion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Excursion.cs" />
     <Compile Include="Models\Experience.cs" />
     <Compile Include="Models\Housing.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -315,6 +321,11 @@
     <Content Include="Views\ThemeParks\Details.cshtml" />
     <Content Include="Views\ThemeParks\Edit.cshtml" />
     <Content Include="Views\ThemeParks\Index.cshtml" />
+    <Content Include="Views\Excursions\Create.cshtml" />
+    <Content Include="Views\Excursions\Delete.cshtml" />
+    <Content Include="Views\Excursions\Details.cshtml" />
+    <Content Include="Views\Excursions\Edit.cshtml" />
+    <Content Include="Views\Excursions\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -367,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510211458278_ExperiencesWithUser.resx">
       <DependentUpon>202510211458278_ExperiencesWithUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510211710420_NewExcursion.resx">
+      <DependentUpon>202510211710420_NewExcursion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
