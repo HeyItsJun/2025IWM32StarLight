@@ -8,8 +8,34 @@
     <title>@ViewBag.Title - St✰rLight</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .navbar {
+            opacity: 0.75;
+        }
 
+        .navbar-brand {
+            font-family: 'Shrikhand', monospace;
+            font-size: 1.2rem;
+        }
+
+        .navbar-nav .nav-link {
+            font-family: 'VT323', monospace;
+            text-align: center;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+            .navbar-nav .nav-item {
+                margin: 0 0.5rem;
+            }
+    </style>
 </head>
+
+
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
@@ -20,15 +46,17 @@
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Gestión de Alojamientos", "Index", "Housings", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Gestión de Experiencias", "Index", "Experiences", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Gestión de Bares y Restaurantes", "Index", "Restaurants", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Gestión de Parques Temáticos", "Index", "ThemeParks", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Gestión de Espectáculos", "Index", "Shows", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Gestión de Excursiones y Visitas Guiadas", "Index", "Excursions", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Alojamientos", "Index", "Housings", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Experiencias", "Index", "Experiences", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Bares y Restaurantes", "Index", "Restaurants", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Parques Temáticos", "Index", "ThemeParks", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Espectáculos", "Index", "Shows", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Excursiones y Visitas Guiadas", "Index", "Excursions", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Vídeos", "Videos", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("About Us", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
-                 @Html.Partial("_LoginPartial")
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
