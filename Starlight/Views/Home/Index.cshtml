@@ -2,32 +2,141 @@
     ViewBag.Title = "Home Page";
 }
 
+<!-- Google Font for title -->
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --title-font: 'Shrikhand', sans-serif;
+        --body-font: 'Segoe UI', sans-serif;
+        --overlay-color: rgba(0,0,0,0.45);
+        --accent-color: #ffd166;
+    }
+
+    .homepage-hero{
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        color: white;
+        background-image: url('@Url.Content("~/content/background.gif")'); /* correct Razor syntax */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .homepage-hero::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--overlay-color);
+        z-index: 1;
+    }
+
+    .hero-content{
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+        max-width: 900px;
+        width: 95%;
+        box-sizing: border-box;
+    }
+
+    header.homepage-hero h1#siteTitle {
+        margin: 0 0 0.35rem 0;
+        font-family: var(--title-font);
+        font-size: clamp(2.2rem, 6.5vw, 5rem);
+        line-height: 1;
+        letter-spacing: 0.02em;
+        font-weight: 700;
+        text-transform: none;
+        display: inline-block;
+        padding: 0.2rem 0.5rem;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: white;
+        text-shadow: 0 6px 18px rgba(0,0,0,0.5);
+        animation: fadeUp 600ms ease-out both;
+    }
+
+    .hero-subtitle{
+        margin-top: 0.6rem;
+        margin-bottom: 1.25rem;
+        font-family: var(--body-font);
+        font-size: clamp(1rem, 2.4vw, 1.4rem);
+        color: #f7f7f7;
+        opacity: 0.95;
+        animation: fadeUp 900ms ease-out both;
+        animation-delay: 120ms;
+    }
+
+    .hero-cta a{
+        display: inline-block;
+        margin-top: .6rem;
+        padding: .6rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-family: var(--body-font);
+        font-weight: 600;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+        background: rgba(255,255,255,0.12);
+        color: white;
+        backdrop-filter: blur(4px);
+        transition: transform .16s ease, background .16s ease;
+    }
+    .hero-cta a:hover{ transform: translateY(-3px); background: rgba(255,255,255,0.18); }
+
+    @@keyframes fadeUp{
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @@media (max-width: 520px){
+        .homepage-hero{ padding: 1.5rem 0; }
+        #title{ font-size: 2.25rem; }
+    }
+</style>
+
+
 <main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+    <header class="homepage-hero" role="banner" aria-labelledby="siteTitle" aria-describedby="siteDescription">
+        <div class="hero-content">
+            <!-- Title: uses exact spelling including the star -->
+            <h1 id="siteTitle" class="display-1" role="heading" aria-level="1">ST4RLIGHT</h1>
+
+            <!-- Short description -->
+            <p id="siteDescription" class="hero-subtitle">
+                <!-- Placeholder description — replace with your real one -->
+                Haz los viajes de tus sueños una realidad tangible.
+            </p>
+
+            <!-- Optional call-to-action -->
+            <p class="hero-cta">
+                <a href="@Url.Action("Index", "Home")" role="button" aria-label="Learn more about Starlight">Explore St✰rLight &raquo;</a>
+            </p>
+        </div>
+    </header>
+
+    <!-- Existing content sections below (optional) -->
+    <section class="row" aria-labelledby="webTitle" style="padding:2rem;">
+        <h2 id="webTitle">Placeholder section</h2>
+        <p class="lead">Replace or remove the remainder of the original page as you see fit. These are placeholders for other homepage content.</p>
     </section>
 
-    <div class="row">
+    <div class="row" style="padding:0 2rem 4rem 2rem;">
         <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            <h3 id="gettingStartedTitle">Getting started</h3>
+            <p>Placeholder text.</p>
         </section>
         <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+            <h3 id="librariesTitle">Get more libraries</h3>
+            <p>Placeholder text.</p>
         </section>
         <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            <h3 id="hostingTitle">Web Hosting</h3>
+            <p>Placeholder text.</p>
         </section>
     </div>
 </main>
