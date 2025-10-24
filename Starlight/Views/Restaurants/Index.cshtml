@@ -4,84 +4,198 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CityTown)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Province)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Community)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Country)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FoodType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Style)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MinPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.MaxPrice)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AverageScore)
-        </th>
-        <th></th>
-    </tr>
+<style>
+    :root {
+        --accent-color: #F2D5DD;
+        --dark-color: #011526;
+        --mid-color: #184D59;
+        --highlight: #F29D52;
+        --contrast: #F28B66;
+        --body-font: 'VT323', monospace;
+        --title-font: 'Shrikhand', sans-serif;
+    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CityTown)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Province)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Community)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Country)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FoodType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Style)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MinPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaxPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AverageScore)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.RestaurantID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.RestaurantID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.RestaurantID })
-        </td>
-    </tr>
-}
+    body {
+        font-family: var(--body-font);
+        margin: 0;
+        padding: 0;
+        background-color: var(--dark-color);
+        color: var(--accent-color);
+    }
 
-</table>
+    main {
+        padding: 2rem 3rem;
+    }
+
+    header h1 {
+        font-family: var(--title-font);
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--highlight);
+        text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-family: var(--body-font);
+        color: var(--accent-color);
+        opacity: 0.85;
+        margin-bottom: 2rem;
+    }
+
+    .controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+    }
+
+        .controls a.btn {
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
+            background: var(--mid-color);
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+            .controls a.btn:hover {
+                background: var(--highlight);
+                color: var(--dark-color);
+                transform: translateY(-3px);
+            }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    th, td {
+        padding: 0.9rem 1rem;
+        text-align: left;
+        color: #ffffff; 
+    }
+
+    th {
+        background-color: var(--mid-color);
+        color: var(--accent-color);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+        background-color: rgba(255, 255, 255, 0.04);
+    }
+
+    tr:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        transition: background 0.2s ease;
+    }
+
+    .actions a {
+        color: var(--highlight);
+        text-decoration: none;
+        font-weight: 600;
+        margin-right: .45rem;
+    }
+
+        .actions a:hover {
+            color: var(--contrast);
+            text-decoration: underline;
+        }
+
+    .actions .sep {
+        color: rgba(255,255,255,0.55);
+        margin: 0 .35rem;
+    }
+
+    @@keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @@media (max-width: 520px) {
+        main {
+            padding: 1rem;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        table {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+<main>
+    <header>
+        <h1>Bares y Restaurantes</h1>
+        <p class="hero-subtitle">Explora la lista de lugares gastronómicos destacados</p>
+    </header>
+
+    <div class="controls" role="toolbar" aria-label="Controles de lista">
+        <p style="margin:0" class="muted" aria-hidden="true">
+            @(Model != null ? Model.Count() : 0) items
+        </p>
+        <a class="btn" href="@Url.Action("Create")" role="button" aria-label="Crear nuevo elemento">Crear nuevo</a>
+    </div>
+
+    <table class="table" role="table" aria-describedby="restaurantListDescription">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Pueblo/Ciudad</th>
+                <th>Provincia</th>
+                <th>Comunidad Autónoma</th>
+                <th>País</th>
+                <th>Tipo de Comida</th>
+                <th>Estilo</th>
+                <th>@Html.DisplayNameFor(model => model.MinPrice)</th>
+                <th>@Html.DisplayNameFor(model => model.MaxPrice)</th>
+                <th>Nota Media</th>
+                <th class="muted" aria-hidden="true">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CityTown)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Province)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Community)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Country)</td>
+                    <td>@Html.DisplayFor(modelItem => item.FoodType)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Style)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MinPrice)</td>
+                    <td>@Html.DisplayFor(modelItem => item.MaxPrice)</td>
+                    <td>@Html.DisplayFor(modelItem => item.AverageScore)</td>
+                    <td class="actions" role="group" aria-label="Acciones por restaurante">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.RestaurantID }, new { title = "Editar " + item.Name })
+                        <span class="sep">|</span>
+                        @Html.ActionLink("Details", "Details", new { id = item.RestaurantID }, new { title = "Detalles de " + item.Name })
+                        <span class="sep">|</span>
+                        @Html.ActionLink("Delete", "Delete", new { id = item.RestaurantID }, new { title = "Eliminar " + item.Name })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</main>

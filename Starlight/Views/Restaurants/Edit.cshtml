@@ -4,13 +4,59 @@
     ViewBag.Title = "Edit";
 }
 
+<style>
+    body {
+        background: linear-gradient(270deg, #011526, #184D59, #011526);
+        background-size: 600% 600%;
+        animation: animatedBackground 20s ease infinite;
+        color: #F2D5DD;
+        font-family: 'VT323', monospace;
+    }
+
+    @@keyframes animatedBackground {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .control-label {
+        color: #F2D5DD;
+    }
+
+    .form-control {
+        background-color: rgba(24, 77, 89, 0.8);
+        color: #F2D5DD;
+        border: 1px solid #F2D5DD;
+    }
+
+    .btn-default {
+        background-color: rgba(24, 77, 89, 0.8);
+        color: #F2D5DD;
+        border: 1px solid #F2D5DD;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+        .btn-default:hover {
+            background-color: #F29D52;
+            color: #011526;
+        }
+</style>
+
 <h2>Edit</h2>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Restaurant</h4>
         <hr />
