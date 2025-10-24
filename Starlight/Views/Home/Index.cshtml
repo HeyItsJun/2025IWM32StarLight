@@ -27,8 +27,8 @@
     }
 
     .homepage-hero {
-        background: none; 
-        height: 100vh; 
+        background: none;
+        height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -54,7 +54,7 @@
         animation: fadeUp 600ms ease-out both;
     }
 
-    .hero-subtitle{
+    .hero-subtitle {
         margin-top: 0.6rem;
         margin-bottom: 1.25rem;
         font-family: var(--subtitle-font);
@@ -72,7 +72,7 @@
         text-align: center;
     }
 
-    .hero-cta a{
+    .hero-cta a {
         display: inline-block;
         margin-top: .6rem;
         padding: .6rem 1rem;
@@ -86,16 +86,32 @@
         backdrop-filter: blur(4px);
         transition: transform .16s ease, background .16s ease;
     }
-    .hero-cta a:hover{ transform: translateY(-3px); background: rgba(255,255,255,0.18); }
 
-    @@keyframes fadeUp{
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
+        .hero-cta a:hover {
+            transform: translateY(-3px);
+            background: rgba(255,255,255,0.18);
+        }
+
+    @@keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
-    @@media (max-width: 520px){
-        .homepage-hero{ padding: 1.5rem 0; }
-        #siteTitle{ font-size: 2.25rem; }
+    @@media (max-width: 520px) {
+        .homepage-hero {
+            padding: 1.5rem 0;
+        }
+
+        #siteTitle {
+            font-size: 2.25rem;
+        }
     }
 </style>
 

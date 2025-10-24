@@ -4,111 +4,127 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<style>
+    body.details-page {
+        background: linear-gradient(270deg, #011526, #184D59, #011526);
+        background-size: 600% 600%;
+        animation: animatedBackground 20s ease infinite;
+        color: #F2D5DD;
+        font-family: 'VT323', monospace;
+        padding: 2rem;
+    }
 
-<div>
-    <h4>Show</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
+    @@keyframes animatedBackground {
+        0% {
+            background-position: 0% 50%;
+        }
 
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
+        50% {
+            background-position: 100% 50%;
+        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Type)
-        </dt>
+        100% {
+            background-position: 0% 50%;
+        }
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.Type)
-        </dd>
+    @@keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Place)
-        </dt>
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.Place)
-        </dd>
+    .details-container {
+        background-color: rgba(1, 21, 38, 0.75);
+        padding: 2rem;
+        border-radius: 12px;
+        max-width: 800px;
+        margin: 0 auto;
+        animation: fadeUp 0.5s ease forwards;
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.City_Village)
-        </dt>
+    dt {
+        font-weight: bold;
+        margin-top: 1rem;
+        color: #F2D5DD;
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.City_Village)
-        </dd>
+    dd {
+        margin-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #F2D5DD;
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Province)
-        </dt>
+    a {
+        color: #F29D52;
+        font-weight: 600;
+        text-decoration: none;
+        margin-right: 1rem;
+        transition: color 0.3s ease;
+    }
 
-        <dd>
-            @Html.DisplayFor(model => model.Province)
-        </dd>
+        a:hover {
+            color: #F28B66;
+            text-decoration: underline;
+        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AutonumusCommunity)
-        </dt>
+    h2, h4 {
+        color: #F2D5DD;
+    }
+</style>
 
-        <dd>
-            @Html.DisplayFor(model => model.AutonumusCommunity)
-        </dd>
+<body class="details-page">
+    <div class="details-container">
+        <h2>Details</h2>
+        <h4>Show</h4>
+        <hr />
+        <dl>
+            <dt>@Html.DisplayNameFor(model => model.Title)</dt>
+            <dd>@Html.DisplayFor(model => model.Title)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Country)
-        </dt>
+            <dt>@Html.DisplayNameFor(model => model.Type)</dt>
+            <dd>@Html.DisplayFor(model => model.Type)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Country)
-        </dd>
+            <dt>@Html.DisplayNameFor(model => model.Place)</dt>
+            <dd>@Html.DisplayFor(model => model.Place)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Duration)
-        </dt>
+            <dt>@Html.DisplayNameFor(model => model.City_Village)</dt>
+            <dd>@Html.DisplayFor(model => model.City_Village)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Duration)
-        </dd>
+            <dt>@Html.DisplayNameFor(model => model.Province)</dt>
+            <dd>@Html.DisplayFor(model => model.Province)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DateRange)
-        </dt>
+            <dt>@Html.DisplayNameFor(model => model.AutonumusCommunity)</dt>
+            <dd>@Html.DisplayFor(model => model.AutonumusCommunity)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.DateRange)
-        </dd>
+            <dt>@Html.DisplayNameFor(model => model.Country)</dt>
+            <dd>@Html.DisplayFor(model => model.Country)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MinPrice)
-        </dt>
+            <dt>@Html.DisplayNameFor(model => model.Duration)</dt>
+            <dd>@Html.DisplayFor(model => model.Duration)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MinPrice)
-        </dd>
+            <dt>@Html.DisplayNameFor(model => model.DateRange)</dt>
+            <dd>@Html.DisplayFor(model => model.DateRange)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.MaxPrice)
-        </dt>
+            <dt>@Html.DisplayNameFor(model => model.MinPrice)</dt>
+            <dd>@Html.DisplayFor(model => model.MinPrice)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.MaxPrice)
-        </dd>
+            <dt>@Html.DisplayNameFor(model => model.MaxPrice)</dt>
+            <dd>@Html.DisplayFor(model => model.MaxPrice)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Photo_Video)
-        </dt>
+            <dt>@Html.DisplayNameFor(model => model.Photo_Video)</dt>
+            <dd>@Html.DisplayFor(model => model.Photo_Video)</dd>
+        </dl>
 
-        <dd>
-            @Html.DisplayFor(model => model.Photo_Video)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ShowId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ShowId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</body>
