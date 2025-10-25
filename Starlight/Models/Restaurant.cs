@@ -21,5 +21,6 @@ namespace Starlight.Models
         public int MaxPrice { get; set; }
         public double AverageScore { get; set; }
         public List<String> Media { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }
