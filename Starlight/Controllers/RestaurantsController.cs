@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Starlight.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Starlight.Controllers
 {
@@ -18,7 +19,9 @@ namespace Starlight.Controllers
         // GET: Restaurants
         public ActionResult Index()
         {
-            return View(db.Restaurants.ToList());
+            string currentUserId = User.Identity.GetUserId();
+            var userRestaurants = db.Restaurants.Where(p => p.UserId == currentUserId).ToList();
+            return View(userRestaurants);
         }
 
         // GET: Restaurants/Details/5
@@ -29,7 +32,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Restaurant restaurant = db.Restaurants.Find(id);
-            if (restaurant == null)
+            string currentUserId = User.Identity?.GetUserId();
+            if ((restaurant.UserId != currentUserId) || (restaurant == null))
             {
                 return HttpNotFound();
             }
@@ -49,6 +53,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "RestaurantID,Name,CityTown,Province,Community,Country,FoodType,Style,MinPrice,MaxPrice,AverageScore")] Restaurant restaurant)
         {
+            string currentUserId = User.Identity.GetUserId();
+            restaurant.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.Restaurants.Add(restaurant);
@@ -67,7 +73,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Restaurant restaurant = db.Restaurants.Find(id);
-            if (restaurant == null)
+            string currentUserId = User.Identity.GetUserId();
+            if ((restaurant.UserId != currentUserId) || (restaurant == null))
             {
                 return HttpNotFound();
             }
@@ -81,6 +88,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "RestaurantID,Name,CityTown,Province,Community,Country,FoodType,Style,MinPrice,MaxPrice,AverageScore")] Restaurant restaurant)
         {
+            string currentUserId = User.Identity.GetUserId();
+            restaurant.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.Entry(restaurant).State = EntityState.Modified;
@@ -98,7 +107,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Restaurant restaurant = db.Restaurants.Find(id);
-            if (restaurant == null)
+            string currentUserId = User.Identity.GetUserId();
+            if ((restaurant.UserId != currentUserId) || (restaurant == null))
             {
                 return HttpNotFound();
             }
