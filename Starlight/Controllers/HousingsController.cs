@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using Starlight.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -6,11 +8,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Starlight.Models;
 
 namespace Starlight.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     public class HousingsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,7 +19,9 @@ namespace Starlight.Controllers
         // GET: Housings
         public ActionResult Index()
         {
-            return View(db.Housings.ToList());
+            string currentUserId = User.Identity.GetUserId();
+            var userHousing = db.Housings.Where(p => p.UserId == currentUserId).ToList();
+            return View(userHousing);
         }
 
         // GET: Housings/Details/5
@@ -29,7 +32,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Housing housing = db.Housings.Find(id);
-            if (housing == null)
+            string currentUserId = User.Identity?.GetUserId();
+            if ((housing.UserId != currentUserId) || (housing == null))
             {
                 return HttpNotFound();
             }
@@ -49,6 +53,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "HousingId,Name,City_Village,Province,AutonumusCommunity,Country,Type,Description,Parking,Pool,SportsFacility,ChildrenFacility,Photo_Video")] Housing housing)
         {
+            string currentUserId = User.Identity.GetUserId();
+            housing.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.Housings.Add(housing);
@@ -67,7 +73,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Housing housing = db.Housings.Find(id);
-            if (housing == null)
+            string currentUserId = User.Identity?.GetUserId();
+            if ((housing.UserId != currentUserId) || (housing == null))
             {
                 return HttpNotFound();
             }
@@ -81,6 +88,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "HousingId,Name,City_Village,Province,AutonumusCommunity,Country,Type,Description,Parking,Pool,SportsFacility,ChildrenFacility,Photo_Video")] Housing housing)
         {
+            string currentUserId = User.Identity.GetUserId();
+            housing.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.Entry(housing).State = EntityState.Modified;
@@ -98,7 +107,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Housing housing = db.Housings.Find(id);
-            if (housing == null)
+            string currentUserId = User.Identity?.GetUserId();
+            if ((housing.UserId != currentUserId) || (housing == null))
             {
                 return HttpNotFound();
             }
