@@ -23,5 +23,8 @@ namespace Starlight.Models
         public bool SportsFacility { get; set; }
         public bool ChildrenFacility { get; set; }
         public String Photo_Video { get; set; }
+
+        public String UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }
