@@ -694,3 +694,4 @@ C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.
 C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.ExperiencesWithUser.resources
 C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewExcursion.resources
 C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.HousingWithUser.resources
+C:\Users\ikerv\Desktop\UNI\IPS\2025IWM32StarLight\Starlight\obj\Debug\Starlight.Migrations.NewVideo.resources

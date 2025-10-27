@@ -177,6 +177,7 @@
     <Compile Include="Controllers\RestaurantsController.cs" />
     <Compile Include="Controllers\ShowsController.cs" />
     <Compile Include="Controllers\ThemeParksController.cs" />
+    <Compile Include="Controllers\VideosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,6 +217,10 @@
     <Compile Include="Migrations\202510261512229_HousingWithUser.Designer.cs">
       <DependentUpon>202510261512229_HousingWithUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510271603045_NewVideo.cs" />
+    <Compile Include="Migrations\202510271603045_NewVideo.Designer.cs">
+      <DependentUpon>202510271603045_NewVideo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Excursion.cs" />
@@ -226,6 +231,7 @@
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\Show.cs" />
     <Compile Include="Models\ThemePark.cs" />
+    <Compile Include="Models\Video.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -330,6 +336,11 @@
     <Content Include="Views\Excursions\Details.cshtml" />
     <Content Include="Views\Excursions\Edit.cshtml" />
     <Content Include="Views\Excursions\Index.cshtml" />
+    <Content Include="Views\Videos\Create.cshtml" />
+    <Content Include="Views\Videos\Delete.cshtml" />
+    <Content Include="Views\Videos\Details.cshtml" />
+    <Content Include="Views\Videos\Edit.cshtml" />
+    <Content Include="Views\Videos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -388,6 +399,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510261512229_HousingWithUser.resx">
       <DependentUpon>202510261512229_HousingWithUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510271603045_NewVideo.resx">
+      <DependentUpon>202510271603045_NewVideo.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

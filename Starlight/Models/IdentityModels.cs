@@ -41,5 +41,7 @@ namespace Starlight.Models
         public System.Data.Entity.DbSet<Starlight.Models.ThemePark> ThemeParks { get; set; }
 
         public System.Data.Entity.DbSet<Starlight.Models.Excursion> Excursions { get; set; }
+
+        public System.Data.Entity.DbSet<Starlight.Models.Video> Videos { get; set; }
     }
 }
