@@ -20,5 +20,7 @@ namespace Starlight.Models
         public double MinPrice { get; set; }
         public double MaxPrice { get; set; }
         public String Photo_Video { get; set; }
+        public String UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }
