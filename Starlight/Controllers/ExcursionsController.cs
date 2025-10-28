@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Starlight.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Starlight.Controllers
 {
@@ -18,7 +19,9 @@ namespace Starlight.Controllers
         // GET: Excursions
         public ActionResult Index()
         {
-            return View(db.Excursions.ToList());
+            string currentUserId = User.Identity.GetUserId();
+            var userExcursion = db.Excursions.Where(p => p.UserId == currentUserId).ToList();
+            return View(userExcursion);
         }
 
         // GET: Excursions/Details/5
@@ -29,7 +32,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Excursion excursion = db.Excursions.Find(id);
-            if (excursion == null)
+            string currentUserId = User.Identity?.GetUserId();
+            if ((excursion.UserId!=currentUserId)||(excursion == null))
             {
                 return HttpNotFound();
             }
@@ -49,6 +53,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ExcursionId,City_Village,Province,AutonumusCommunity,Country,Route,Payment,Agency,Type,Duration,Price,PhotoVideo,DateRange")] Excursion excursion)
         {
+            string currentUserId = User.Identity.GetUserId();
+            excursion.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.Excursions.Add(excursion);
@@ -67,7 +73,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Excursion excursion = db.Excursions.Find(id);
-            if (excursion == null)
+            string currentUserId = User.Identity.GetUserId();
+            if ((excursion.UserId != currentUserId) || (excursion == null))
             {
                 return HttpNotFound();
             }
@@ -81,6 +88,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ExcursionId,City_Village,Province,AutonumusCommunity,Country,Route,Payment,Agency,Type,Duration,Price,PhotoVideo,DateRange")] Excursion excursion)
         {
+            string currentUserId = User.Identity.GetUserId();
+            excursion.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.Entry(excursion).State = EntityState.Modified;
@@ -98,7 +107,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Excursion excursion = db.Excursions.Find(id);
-            if (excursion == null)
+            string currentUserId = User.Identity.GetUserId();
+            if ((excursion.UserId!=currentUserId)||(excursion == null))
             {
                 return HttpNotFound();
             }
