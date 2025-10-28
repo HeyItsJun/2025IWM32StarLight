@@ -10,7 +10,7 @@ using Starlight.Models;
 
 namespace Starlight.Controllers
 {
-    [Authorize]
+    [AllowAnonymous]
     public class ShowsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
