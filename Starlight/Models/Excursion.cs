@@ -22,5 +22,7 @@ namespace Starlight.Models
         public int Price { get; set; }
         public String PhotoVideo { get; set; }
         public String DateRange { get; set; }
+        public String UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

@@ -225,6 +225,10 @@
     <Compile Include="Migrations\202510281215446_ShowWithUser.Designer.cs">
       <DependentUpon>202510281215446_ShowWithUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202510281248047_ExcursionWithUser.cs" />
+    <Compile Include="Migrations\202510281248047_ExcursionWithUser.Designer.cs">
+      <DependentUpon>202510281248047_ExcursionWithUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Excursion.cs" />
@@ -409,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202510281215446_ShowWithUser.resx">
       <DependentUpon>202510281215446_ShowWithUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202510281248047_ExcursionWithUser.resx">
+      <DependentUpon>202510281248047_ExcursionWithUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
