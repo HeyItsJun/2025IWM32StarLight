@@ -7,14 +7,16 @@
     {
         public override void Up()
         {
-            RenameColumn(table: "dbo.Shows", name: "User_Id", newName: "UserId");
-            RenameIndex(table: "dbo.Shows", name: "IX_User_Id", newName: "IX_UserId");
+            AddColumn("dbo.Shows", "UserId", c => c.String(maxLength: 128));
+            CreateIndex("dbo.Shows", "UserId");
+            AddForeignKey("dbo.Shows", "UserId", "dbo.AspNetUsers", "Id");
         }
         
         public override void Down()
         {
-            RenameIndex(table: "dbo.Shows", name: "IX_UserId", newName: "IX_User_Id");
-            RenameColumn(table: "dbo.Shows", name: "UserId", newName: "User_Id");
+            DropForeignKey("dbo.Shows", "UserId", "dbo.AspNetUsers");
+            DropIndex("dbo.Shows", new[] { "UserId" });
+            DropColumn("dbo.Shows", "UserId");
         }
     }
 }
