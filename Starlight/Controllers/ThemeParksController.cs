@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Starlight.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Starlight.Controllers
 {
@@ -18,7 +19,9 @@ namespace Starlight.Controllers
         // GET: ThemeParks
         public ActionResult Index()
         {
-            return View(db.ThemeParks.ToList());
+            string currentUserId = User.Identity.GetUserId();
+            var userThemePark = db.ThemeParks.Where(p => p.UserId == currentUserId).ToList();
+            return View(userThemePark);
         }
 
         // GET: ThemeParks/Details/5
@@ -29,7 +32,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ThemePark themePark = db.ThemeParks.Find(id);
-            if (themePark == null)
+            string currentUserId = User.Identity?.GetUserId();
+            if ((themePark.UserId != currentUserId) || (themePark == null))
             {
                 return HttpNotFound();
             }
@@ -49,6 +53,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ThemeParkId,Name,TypeThemePark,City_Village,Province,AutonumusCommunity,Country,MinPrice,MaxPrice,Photo_Video")] ThemePark themePark)
         {
+            string currentUserId = User.Identity?.GetUserId();
+            themePark.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.ThemeParks.Add(themePark);
@@ -67,7 +73,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ThemePark themePark = db.ThemeParks.Find(id);
-            if (themePark == null)
+            string currentUserId = User.Identity?.GetUserId();
+            if ((themePark.UserId != currentUserId) || (themePark == null))
             {
                 return HttpNotFound();
             }
@@ -81,6 +88,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ThemeParkId,Name,TypeThemePark,City_Village,Province,AutonumusCommunity,Country,MinPrice,MaxPrice,Photo_Video")] ThemePark themePark)
         {
+            string currentUserId = User.Identity?.GetUserId();
+            themePark.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.Entry(themePark).State = EntityState.Modified;
@@ -98,7 +107,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ThemePark themePark = db.ThemeParks.Find(id);
-            if (themePark == null)
+            string currentUserId = User.Identity?.GetUserId();
+            if ((themePark.UserId != currentUserId) || (themePark == null))
             {
                 return HttpNotFound();
             }
