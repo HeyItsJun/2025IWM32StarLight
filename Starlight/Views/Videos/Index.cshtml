@@ -160,67 +160,31 @@
     <table class="table" role="table" aria-describedby="videoListDescription">
         <thead>
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Country)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Community)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Province)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Resource)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.TravelType)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Format)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LikedColors)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Music)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Score)
-                </th>
+                <th>País</th>
+                <th>Comunidad Autónoma</th>
+                <th>Provincia</th>
+                <th>Recurso</th>
+                <th>Tipo de Viaje</th>
+                <th>Formato</th>
+                <th>Colores</th>
+                <th>Música</th>
+                <th>Valoración</th>
                 <th class="muted" aria-hidden="true">Acciones</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
-            {
+             {
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Country)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Community)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Province)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Resource)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.TravelType)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Format)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.LikedColors)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Music)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Score)
-                    </td>
+                    <td>@Html.DisplayFor(modelItem => item.Country)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Community)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Province)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Resource)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TravelType)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Format)</td>
+                    <td>@Html.DisplayFor(modelItem => item.LikedColors)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Music)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Score)</td>
                     <td class="actions" role="group" aria-label="Acciones por vídeo">
                         @Html.ActionLink("Edit", "Edit", new { id = item.VideoId }, new { title = "Editar " + item.Resource })
                         <span class="sep">|</span>
@@ -228,7 +192,7 @@
                         <!-- Delete intentionally omitted as requested -->
                     </td>
                 </tr>
-            }
+             }
         </tbody>
     </table>
 </main>
