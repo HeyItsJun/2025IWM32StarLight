@@ -7,10 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Starlight.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Starlight.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     public class ShowsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -18,7 +19,9 @@ namespace Starlight.Controllers
         // GET: Shows
         public ActionResult Index()
         {
-            return View(db.Shows.ToList());
+            string currentUserId = User.Identity.GetUserId();
+            var userShows = db.Shows.Where(p => p.UserId == currentUserId).ToList();
+            return View(userShows);
         }
 
         // GET: Shows/Details/5
@@ -29,7 +32,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Show show = db.Shows.Find(id);
-            if (show == null)
+            string currentUserId = User.Identity?.GetUserId();
+            if ((show.UserId!=currentUserId)||(show == null))
             {
                 return HttpNotFound();
             }
@@ -49,6 +53,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ShowId,Title,Type,Place,City_Village,Province,AutonumusCommunity,Country,Duration,DateRange,MinPrice,MaxPrice,Photo_Video")] Show show)
         {
+            string currentUserId= User.Identity.GetUserId();
+            show.UserId=currentUserId;
             if (ModelState.IsValid)
             {
                 db.Shows.Add(show);
@@ -67,7 +73,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Show show = db.Shows.Find(id);
-            if (show == null)
+            string currentUserId = User.Identity.GetUserId();
+            if ((show.UserId != currentUserId) || (show == null))
             {
                 return HttpNotFound();
             }
@@ -81,6 +88,8 @@ namespace Starlight.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ShowId,Title,Type,Place,City_Village,Province,AutonumusCommunity,Country,Duration,DateRange,MinPrice,MaxPrice,Photo_Video")] Show show)
         {
+            string currentUserId = User.Identity.GetUserId();
+            show.UserId = currentUserId;
             if (ModelState.IsValid)
             {
                 db.Entry(show).State = EntityState.Modified;
@@ -98,7 +107,8 @@ namespace Starlight.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Show show = db.Shows.Find(id);
-            if (show == null)
+            string currentUserId = User.Identity.GetUserId();
+            if ((show.UserId!=currentUserId)||(show == null))
             {
                 return HttpNotFound();
             }
