@@ -1,0 +1,152 @@
+﻿@model Starlight.Models.Show
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<style>
+    body.delete-page {
+        background: linear-gradient(270deg, #011526, #184D59, #011526);
+        background-size: 600% 600%;
+        animation: animatedBackground 20s ease infinite;
+        color: #F2D5DD;
+        font-family: 'VT323', monospace;
+        padding: 2rem;
+    }
+
+    @@keyframes animatedBackground {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @@keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .delete-container {
+        background-color: rgba(1, 21, 38, 0.75);
+        padding: 2rem;
+        border-radius: 12px;
+        max-width: 800px;
+        margin: 0 auto;
+        animation: fadeUp 0.5s ease forwards;
+    }
+
+    dt {
+        font-weight: bold;
+        margin-top: 1rem;
+        color: #F2D5DD;
+    }
+
+    dd {
+        margin-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #F2D5DD;
+    }
+
+    h2, h3, h4 {
+        color: #F2D5DD;
+    }
+
+    .btn-delete {
+        background-color: rgba(24, 77, 89, 0.8);
+        color: #F2D5DD;
+        border: 1px solid #F2D5DD;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease, color 0.3s ease;
+        font-family: 'VT323', monospace;
+    }
+
+        .btn-delete:hover {
+            background-color: #F29D52;
+            color: #011526;
+        }
+
+    a {
+        color: #F29D52;
+        font-weight: 600;
+        text-decoration: none;
+        margin-left: 1rem;
+        transition: color 0.3s ease;
+    }
+
+        a:hover {
+            color: #F28B66;
+            text-decoration: underline;
+        }
+</style>
+
+<body class="delete-page">
+    <div class="delete-container">
+        <h2>Delete</h2>
+        <h3>Confirma que quieres eliminarlo:</h3>
+        <h4>Show</h4>
+        <hr />
+        <dl>
+            <dt>@Html.DisplayNameFor(model => model.Title)</dt>
+            <dd>@Html.DisplayFor(model => model.Title)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Type)</dt>
+            <dd>@Html.DisplayFor(model => model.Type)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Place)</dt>
+            <dd>@Html.DisplayFor(model => model.Place)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.City_Village)</dt>
+            <dd>@Html.DisplayFor(model => model.City_Village)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Province)</dt>
+            <dd>@Html.DisplayFor(model => model.Province)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.AutonumusCommunity)</dt>
+            <dd>@Html.DisplayFor(model => model.AutonumusCommunity)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Country)</dt>
+            <dd>@Html.DisplayFor(model => model.Country)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Duration)</dt>
+            <dd>@Html.DisplayFor(model => model.Duration)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.DateRange)</dt>
+            <dd>@Html.DisplayFor(model => model.DateRange)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.MinPrice)</dt>
+            <dd>@Html.DisplayFor(model => model.MinPrice)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.MaxPrice)</dt>
+            <dd>@Html.DisplayFor(model => model.MaxPrice)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Photo_Video)</dt>
+            <dd>@Html.DisplayFor(model => model.Photo_Video)</dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn-delete" />
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>

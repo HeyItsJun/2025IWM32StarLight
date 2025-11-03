@@ -1,0 +1,160 @@
+﻿@model Starlight.Models.Restaurant
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<style>
+    body {
+        background: linear-gradient(270deg, #011526, #184D59, #011526);
+        background-size: 600% 600%;
+        animation: animatedBackground 20s ease infinite;
+        color: #F2D5DD;
+        font-family: 'VT323', monospace;
+    }
+
+    @@keyframes animatedBackground {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    .control-label {
+        color: #F2D5DD;
+    }
+
+    .form-control {
+        background-color: rgba(24, 77, 89, 0.8);
+        color: #F2D5DD;
+        border: 1px solid #F2D5DD;
+    }
+
+    .btn-default {
+        background-color: rgba(24, 77, 89, 0.8);
+        color: #F2D5DD;
+        border: 1px solid #F2D5DD;
+        transition: background 0.3s ease, color 0.3s ease;
+    }
+
+        .btn-default:hover {
+            background-color: #F29D52;
+            color: #011526;
+        }
+</style>
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Restaurant</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.RestaurantID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CityTown, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CityTown, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.CityTown, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Province, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Province, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Province, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Community, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Community, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Community, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Country, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FoodType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FoodType, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FoodType, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Style, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Style, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Style, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MinPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MinPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MinPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaxPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaxPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MaxPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AverageScore, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.AverageScore, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AverageScore, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

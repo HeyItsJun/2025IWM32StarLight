@@ -29,5 +29,19 @@ namespace Starlight.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Starlight.Models.Experience> Experiences { get; set; }
+
+        public System.Data.Entity.DbSet<Starlight.Models.Show> Shows { get; set; }
+
+        public System.Data.Entity.DbSet<Starlight.Models.Housing> Housings { get; set; }
+
+        public System.Data.Entity.DbSet<Starlight.Models.Restaurant> Restaurants { get; set; }
+
+        public System.Data.Entity.DbSet<Starlight.Models.ThemePark> ThemeParks { get; set; }
+
+        public System.Data.Entity.DbSet<Starlight.Models.Excursion> Excursions { get; set; }
+
+        public System.Data.Entity.DbSet<Starlight.Models.Video> Videos { get; set; }
     }
 }

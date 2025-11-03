@@ -1,0 +1,121 @@
+﻿@model Starlight.Models.ThemePark
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<style>
+    body.details-page {
+        background: linear-gradient(270deg, #011526, #184D59, #011526);
+        background-size: 600% 600%;
+        animation: animatedBackground 20s ease infinite;
+        color: #F2D5DD;
+        font-family: 'VT323', monospace;
+        padding: 2rem;
+    }
+
+    @@keyframes animatedBackground {
+        0% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    @@keyframes fadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .details-container {
+        background-color: rgba(1, 21, 38, 0.75);
+        padding: 2rem;
+        border-radius: 12px;
+        max-width: 800px;
+        margin: 0 auto;
+        animation: fadeUp 0.5s ease forwards;
+    }
+
+    dt {
+        font-weight: bold;
+        margin-top: 1rem;
+        color: #F2D5DD;
+    }
+
+    dd {
+        margin-left: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #F2D5DD;
+    }
+
+    a {
+        color: #F29D52;
+        font-weight: 600;
+        text-decoration: none;
+        margin-right: 1rem;
+        transition: color 0.3s ease;
+    }
+
+        a:hover {
+            color: #F28B66;
+            text-decoration: underline;
+        }
+
+    h2, h4 {
+        color: #F2D5DD;
+    }
+</style>
+
+<body class="details-page">
+    <div class="details-container">
+        <h2>Details</h2>
+        <h4>ThemePark</h4>
+        <hr />
+        <dl>
+            <dt>@Html.DisplayNameFor(model => model.Name)</dt>
+            <dd>@Html.DisplayFor(model => model.Name)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.TypeThemePark)</dt>
+            <dd>@Html.DisplayFor(model => model.TypeThemePark)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.City_Village)</dt>
+            <dd>@Html.DisplayFor(model => model.City_Village)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Province)</dt>
+            <dd>@Html.DisplayFor(model => model.Province)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.AutonumusCommunity)</dt>
+            <dd>@Html.DisplayFor(model => model.AutonumusCommunity)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Country)</dt>
+            <dd>@Html.DisplayFor(model => model.Country)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.MinPrice)</dt>
+            <dd>@Html.DisplayFor(model => model.MinPrice)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.MaxPrice)</dt>
+            <dd>@Html.DisplayFor(model => model.MaxPrice)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Photo_Video)</dt>
+            <dd>@Html.DisplayFor(model => model.Photo_Video)</dd>
+        </dl>
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ThemeParkId }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</body>

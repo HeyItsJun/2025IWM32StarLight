@@ -3,26 +3,73 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <title>@ViewBag.Title - St✰rLight</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <style>
+        .navbar {
+            opacity: 0.75;
+            justify-content: center !important;
+        }
 
+        .container {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-family: 'Shrikhand', monospace;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        .navbar-collapse {
+            display: flex !important;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar-nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+            .navbar-nav .nav-link {
+                font-family: 'VT323', monospace;
+                text-align: center;
+            }
+
+            .navbar-nav .nav-item {
+                margin: 0 0.5rem;
+            }
+    </style>
 </head>
+
+
 <body>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
-            @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            @Html.ActionLink("St✰rLight", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Alojamientos", "Index", "Housings", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Experiencias", "Index", "Experiences", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Bares y Restaurantes", "Index", "Restaurants", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Parques Temáticos", "Index", "ThemeParks", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Espectáculos", "Index", "Shows", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Excursiones y Visitas Guiadas", "Index", "Excursions", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Confección de Viaje Virtual", "Index", "Videos", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>
-                 @Html.Partial("_LoginPartial")
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
@@ -30,7 +77,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - St✰rLight</p>
         </footer>
     </div>
 
